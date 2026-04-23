@@ -2,9 +2,10 @@ import streamlit as st
 import json
 import base64
 from styles import apply_dark_luxury_theme
+from config import GOOGLE_LOGIN_URL
 from api_client import (
     upload_contract, ask_question, get_sessions, create_session, 
-    delete_session, get_session_history, edit_chat_message, login, register, API_BASE_URL
+    delete_session, get_session_history, edit_chat_message, login, register
 )
 from components import (
     render_pdf_preview, render_dynamic_progress_bar, 
@@ -121,7 +122,7 @@ if not st.session_state.jwt_token:
         
         st.markdown("<div style='text-align: center;'>OR</div>", unsafe_allow_html=True)
         # Google Login Link
-        st.link_button("🚀 Login with Google", "http://localhost:8080/oauth2/authorization/google", use_container_width=True)
+        st.link_button("🚀 Login with Google", GOOGLE_LOGIN_URL, use_container_width=True)
 
     with tab_register:
         with st.form("register_form"):

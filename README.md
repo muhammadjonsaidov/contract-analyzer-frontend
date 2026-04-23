@@ -66,10 +66,11 @@ A premium, enterprise-grade Streamlit application designed for deep contract ana
 
 ### Configuration
 
-The application is configured to connect to the backend at `http://localhost:8080/api`. If your backend is running on a different address, update `API_BASE_URL` in `api_client.py`:
+The application uses a central `config.py` file to manage backend connections. Update the `BACKEND_URL` in `config.py` if your backend address changes:
 
 ```python
-API_BASE_URL = "http://your-backend-url/api"
+# config.py
+BACKEND_URL = "https://your-ngrok-url.ngrok-free.dev/backend"
 ```
 
 ### Running the App
@@ -83,6 +84,7 @@ streamlit run streamlit.py
 ```text
 .
 ├── streamlit.py       # Main entry point and application logic
+├── config.py          # Centralized configuration (URLs, API endpoints)
 ├── api_client.py      # Backend API communication layer
 ├── components.py      # Custom UI components (PDF preview, metrics, cards)
 ├── styles.py          # Dark Luxury CSS theme and global styles

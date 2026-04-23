@@ -1,7 +1,8 @@
 import requests
 import streamlit as st
 
-API_BASE_URL = "http://localhost:8080/api"
+from config import API_BASE_URL
+
 
 def get_headers():
     headers = {}
